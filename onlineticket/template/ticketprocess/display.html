@@ -1,0 +1,48 @@
+
+<html>
+{% extends 'ticketprocess/base.html' %}
+{% block content %}
+<h1>Bus details</h1>
+
+<table border="1" width="850" height="200">
+<tr>
+<th rowspan="2">Bus_name</th>
+<th rowspan="2>Bus_number</th>
+<th colspan="2">Route</th>
+<th rowspan="2">TotalNo.of Seats</th>
+<th rowspan="2">Remainingseat</th>
+<th rowspan="2">Fare</th>
+<th rowspan="2">Date</th>
+<th rowspan="2">Time</th>
+    </tr>
+    <tr>
+    <th>Start</th>
+    <th>End</th>
+    </tr>
+</th>
+<tr>
+     {% if ticket %}
+     {% for st in ticket %}
+
+
+
+     <td>{{st.bus_name}}</td>
+     <td>{{st.bus_num}}</td>
+     <td>{{st.start}}</td>
+     <td>{{st.end}}</td>
+     <td>{{st.seats}}</td>
+     <td>{{st.balanseat}}</td>
+     <td>{{st.fare}}</td>
+     <td>{{st.date}}</td>
+     <td>{{st.time}}</td>
+
+    </tr>
+
+{% endfor %}
+{% endif %}
+</table>
+
+<a href="/add" ><button type= "button">Add new Bus Details </button></a>
+{% endblock%}
+
+</html>
